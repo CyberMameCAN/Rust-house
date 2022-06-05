@@ -2,13 +2,19 @@ use std::io;  // 入出力ライブラリ
 use rand::Rng;
 use std::cmp::Ordering;
 
+mod general3;
+
 // 「クレート」Rustソースコードを集めたもの
 
 fn main() {
+    general3::general3();  // 別ファイルの関数呼び出し
+    general3::hensu_declare();
+
     println!("Guess the number!");
     let secret_number = rand::thread_rng().gen_range(1..101);
-    // println!("The secret number is: {}", secret_number);  // 答えの表示
+    println!("The secret number is: {}", secret_number);  // 答えの表示
 
+    let mut i = 0;
     loop {
         println!("Please input your guess.");
 
@@ -29,7 +35,9 @@ fn main() {
             Err(_) => continue,
         };
 
-        println!("You guessed: {}", guess);
+        i += 1;
+        // let i = i + 1;  // これもシャドーイング(変数宣言時はmutは使わない)
+        println!("{} 回目 You guessed: {}", i, guess);
         match guess.cmp(&secret_number) {
             Ordering::Less => println!("Too small!"),
             Ordering::Greater => println!("Too big!"),
@@ -38,5 +46,5 @@ fn main() {
                 break;
             }
         }
-    }
+   }
 }
