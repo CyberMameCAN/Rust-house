@@ -9,6 +9,10 @@ mod general3;
 fn main() {
     general3::general3();  // 別ファイルの関数呼び出し
     general3::hensu_declare();
+    let x = general3::another_function(5, 'h');  // 返り値がある場合
+    println!("Return value * value is {}", x);
+    general3::noname_function();
+    general3::control_structure();
 
     println!("Guess the number!");
     let secret_number = rand::thread_rng().gen_range(1..101);
