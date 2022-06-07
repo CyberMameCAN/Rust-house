@@ -3,10 +3,21 @@ use rand::Rng;
 use std::cmp::Ordering;
 
 mod general3;
+mod ownership;
+mod struct4;
 
 // 「クレート」Rustソースコードを集めたもの
 
 fn main() {
+    println!("- - - - - - - - - -");
+
+    struct4::structure_handson();
+
+    ownership::garbage_collection();
+    let s1 = String::from("hello");
+    let (s2, len) = ownership::calculate_length(s1);
+    println!("The lenght of '{}' is {}.", s2, len);
+
     general3::general3();  // 別ファイルの関数呼び出し
     general3::hensu_declare();
     let x = general3::another_function(5, 'h');  // 返り値がある場合
