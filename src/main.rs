@@ -4,14 +4,18 @@ use std::cmp::Ordering;
 
 mod general3;
 mod ownership;
-mod struct4;
+mod struct5;
+mod collection8;
+mod error9;
 
 // 「クレート」Rustソースコードを集めたもの
 
 fn main() {
     println!("- - - - - - - - - -");
+    error9::error_training();
 
-    struct4::structure_handson();
+    collection8::collection_training();
+    struct5::structure_handson();
 
     ownership::garbage_collection();
     let s1 = String::from("hello");
