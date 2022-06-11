@@ -7,11 +7,16 @@ mod ownership;
 mod struct5;
 mod collection8;
 mod error9;
+mod generic10;
 
 // 「クレート」Rustソースコードを集めたもの
 
 fn main() {
     println!("- - - - - - - - - -");
+    generic10::generic_trainng();
+    generic10::test_trait_tweet();
+    generic10::test_trait_news();
+
     error9::error_training();
 
     collection8::collection_training();
