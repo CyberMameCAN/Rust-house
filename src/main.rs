@@ -1,3 +1,72 @@
+// Rustの代表的標準ライブラリ (Microsoft learn より)　////////////////////////////////////////
+// std - Rust 標準ライブラリ。 Rust の演習では、次のモジュールを確認します。
+// std::collections - コレクション型の定義。HashMap など。
+// std::env - お使いの環境を操作する関数。
+// std::fmt - 出力形式を制御する機能。
+// std::fs - ファイル システムを操作する関数。
+// std::io - 入力/出力を操作する定義と機能。
+// std::path - ファイル システム パス データの操作をサポートする定義と関数。
+// structopt - コマンド ライン引数を簡単に解析するためのサードパーティ製のクレート。
+// chrono - 日付と時刻のデータを処理するサードパーティ製のクレート。
+// regex - 正規表現を処理するサードパーティ製のクレート。
+// serde - Rust データ構造のシリアル化および逆シリアル化操作のサードパーティ製のクレート。
+//
+// Cargo と呼ばれる Rust ビルド ツール兼依存関係マネージャー
+// cargo new コマンドを使用して、新しいプロジェクト テンプレートを作成する。
+// cargo build コマンドを使用して、プロジェクトをビルドする。
+// cargo run コマンドを使用して、プロジェクトをビルドして実行する。
+// cargo test コマンドを使用して、プロジェクトをテストする。
+// cargo check コマンドを使用して、プロジェクトの種類を確認する。
+// cargo doc コマンドを使用して、プロジェクトのドキュメントをビルドする。
+// cargo publish コマンドを使用して、crates.io にライブラリを発行する。
+// Cargo.toml ファイルにクレート名を追加して、依存クレートをプロジェクトに追加する。
+//
+// https://play.rust-lang.org/?version=stable&mode=debug&edition=2018&gist=39cc3f3ab484636b8df0b3d49f8666c4
+//
+// struct、loop
+// https://play.rust-lang.org/?version=stable&mode=debug&edition=2018&gist=df72129e5bc4643d4c3733a96c40e1bd
+//
+//   Option<T> 列挙型の宣言の <T> の部分は、型 T がジェネリックであり、
+//   Option 列挙型の Some バリアントに関連付けられている。
+//   None と Some は型ではなく、Option<T> 型のバリアント(列挙型に列挙した値)である。
+//   これは特に、関数が引数として Some または None を取ることはできず、Option<T> のみを受け取ることを意味する。
+// enum Option<T> {
+//     None,     // The value doesn't exist
+//     Some(T),  // The value exists
+// }
+//
+// let fruits = vec!["banana", "apple", "coconut", "orange", "strawberry"];
+// for &index in [0, 2, 99].iter() {
+//     // この分岐はmatchアームと呼称。
+//     match fruits.get(index) {    // Vec::get
+//         // こういう分岐が出来る
+//         Some(&"coconut") => println!("Coconuts are awesome!!!"),
+//         Some(fruit_name) => println!("It's a delicious {}!", fruit_name),
+//         None => println!("There is no fruit! :("),
+//     }
+// }
+//
+//   if let 式が便利なのは、1 つのパターンに一致させる必要がある場合に、
+//   match 式のすべての定型コードが不要になること。
+// let a_number: Option<u8> = Some(7);
+// if let Some(7) = a_number {
+//     println!("That's my lucky number!");
+// }
+//
+// https://play.rust-lang.org/?version=stable&mode=debug&edition=2018&gist=2b1715c7a59d81cf2ac3962f2e209a69
+//
+//   Result<T, E> エラーを返して伝達するための列挙型が用意されている
+// enum Result<T, E> {
+//     Ok(T):  // A value T was obtained.
+//     Err(E): // An error of type E was encountered instead.
+// }
+// 値が "存在しない" 可能性を記述する Option 型
+// 処理が"失敗"する可能性がある場合に最適な Result 型
+//
+// https://play.rust-lang.org/?version=stable&mode=debug&edition=2018&gist=127b82b29e6d6430a1507d4a6dd52ee9
+
+
+
 use std::io;  // 入出力ライブラリ
 use rand::Rng;
 use std::cmp::Ordering;

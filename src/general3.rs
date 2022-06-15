@@ -36,7 +36,7 @@ pub fn another_function(x: i32, with_label: char) -> i32 {
 pub fn noname_function() {
     let y = {
         let x = 3;
-        x + 1       // ここにセミコロンは入らない
+        x + 1       // ここにセミコロンは入らない(returnするから)
     };
 
     println!("Noname Function value is {}", y);

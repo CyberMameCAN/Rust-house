@@ -41,8 +41,11 @@ fn hash_training() {
 
     let mut scores = HashMap::new();
 
+    // ハッシュに追加
     scores.insert(String::from("Blue"), 10);
     scores.insert(String::from("Yellow"), 50);
+    // ハッシュから削除
+    //  .remove()
 
     // let teams = vec![String::from("Blue"), String::from("Yellow")];
     // let initial_scores = vec![10, 50];
