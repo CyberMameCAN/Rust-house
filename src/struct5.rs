@@ -21,6 +21,7 @@ pub fn structure_handson() {
 }
 
 // メソッド記法
+// :: コロンを２つ繋げてアクセスする
 // impl: implementation, 実装
 impl Rectangle {
     fn area(&self) -> u32 {
